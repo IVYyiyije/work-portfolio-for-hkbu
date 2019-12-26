@@ -1,0 +1,44 @@
+@charset "utf-8";
+#language a b {
+display:none;
+position:absolute;
+width:100px;
+}
+#language a:hover b{
+display:block;
+left:0;
+top:0;
+}
+#log{
+	position: absolute;
+	left: 850px;
+	top: 400px;
+	font-family: "Microsoft JhengHei";
+	font-size:24px
+	}
+#language{
+	position: absolute;
+	left:950px;
+	top:400px;
+	font-family: "Microsoft JhengHei";
+	font-size:24px
+	}
+#huanfu{
+	position: absolute;
+	left:1100px;
+	top:400px;
+	font-family: "Microsoft JhengHei";
+	font-size:24px
+	}
+a:link {color: #000}
+a:visited {color:#FF0}
+a:hover
+{
+	color: #FFFFFF;
+	position: relative;
+	right: 2px;
+	top: 3px;
+}
+a:active {
+	color: #FF0000
+}

@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+a:link {color: #FF0}
+a:visited {color:#000} 
+a:hover
+{
+	color: #FFFFFF;
+	position: relative;
+	right: 2px;
+	top: 3px;
+}
+a:active {
+	color: #FF0000
+}

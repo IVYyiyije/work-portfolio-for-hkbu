@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+#amovie{
+	position: absolute;
+	color:#FFF;
+	left:80px;
+	top:100px;
+	font-family: "Microsoft JhengHei";
+	font-size:68px
+}
