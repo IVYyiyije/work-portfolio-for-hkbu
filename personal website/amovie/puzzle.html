@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>剧照拼图</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/nav_menu3.css" type="text/css" media="all" />
+	<link rel=stylesheet type="text/css" href="css/weilei.css">
+	<link rel=stylesheet type="text/css" href="css/daohang.css">
+	<link rel=stylesheet type="text/css" href="css/gongjulan.css">
+	<link rel=stylesheet type="text/css" href="css/amovie.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/image-puzzle.js"></script>
+</head>
+
+<body>
+<img style="width:100%;align="center;" src="pic/3.jpg">
+<div class="amovie"><center><h1>爱慕影</h1></center></div>
+<hr>
+
+<div class="nav_menu3">
+	<ul>
+		<li class='nav-has-sub'><a href='index.php'>首页</a>
+		</li>
+		<li class='nav-has-sub'><a href='about.php'>关于我们</a>
+                				<ul>
+				   <li><a href='contact.php'>联系我们</a></li>
+				  
+		  </ul>
+		</li>
+			 <li class='nav-has-sub'><a href='archive.php'>电影简介</a>
+				<ul>
+				   <li><a href='archive.php'>中文电影</a></li>
+				   <li><a href='archive_en.php'>英文电影</a></li>
+		  </ul>
+	   </li>
+	   <li class='nav-has-sub'><a href='MyFavorite.php'>我的收藏</a>
+
+		</li>
+	   <li class='nav-has-sub'><a href='puzzle.html'>游戏环节</a>
+			<ul>
+				<li><a href='puzzle.html'>拼拼电影</a></li>
+                <li><a href='guess.php'>猜猜剧照</a></li>
+			</ul>
+		</li>
+
+
+	
+	</ul>
+
+</div>
+<br>
+
+
+    <div id="collage">
+        <center><h2>剧照拼图</h2></center>
+        <hr />
+        <div id="playPanel" style="padding:5px;display:none;">
+            <h3 id="imgTitle"></h3> <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>步骤:</div><div class="stepCount">0</div>
+                    </div>
+                    <img id="actualImage" />
+                    <div>请将碎片拼凑成这样一个完整画面</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">简单</label>
+                        <input type="radio" name="level" id="medium" value="4" /> <label for="medium">中等</label>
+                        <input type="radio" name="level" id="hard" value="5" /> <label for="hard">困难</label>
+                    </p>
+                    <div>
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">规则</button>
+                        <button id="newPhoto" type="button" class="btn">换一张图片</button>
+                        <button id="btnReplay" type="button" class="btn" onclick="about();">关于</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">游戏结束!!</h2>
+                恭喜!! <br /> 你完成了这张图片
+                <br />
+                用了 <span class="stepCount">0</span>步.
+                <br /><br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">重玩一次</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var images = [
+                { src: 'pic/player-one.jpg', title: '头号玩家' },
+				{ src: 'pic/dangal.jpg', title: '摔跤吧，爸爸！' },
+				{ src: 'pic/the-shawshank-redemption.jpg', title: '肖申克的救赎' },
+				{ src: 'pic/forrest-gump.jpg', title: '阿甘正传' },
+                { src: 'pic/coco.jpg', title: '寻梦环游记' },
+                { src: 'pic/leon.jpg', title: '这个杀手不太冷' },
+                { src: 'pic/honghaixingdong.jpg', title: '红海行动' },
+                { src: 'pic/three-billbords.jpg', title: '三块广告牌' }
+            ];
+
+            $(function () {
+                var gridSize = $('#levelPanel :radio:checked').val();
+                imagePuzzle.startGame(images, gridSize);
+                $('#newPhoto').click(function () {
+                    imagePuzzle.startGame(images, gridSize);
+                });
+
+                $('#levelPanel :radio').change(function (e) {
+                    var gridSize = $(this).val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+            });
+            function rules() {
+                alert('根据图片提示，将小图片移动到相应的位置来拼凑出完整大图即可胜利');
+            }
+            function about() {
+                alert('amovie版权所有');
+            }
+        </script>
+    </div>
+</body>
+</html>
