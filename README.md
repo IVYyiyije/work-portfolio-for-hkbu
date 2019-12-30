@@ -1,5 +1,5 @@
 # work-portfolio-for-hkbu
-There are Yi Yujie's work portfolio for AI and digital media in hkbu.
+There are Yi Yujie's work portfolio.
 
 This repository is my work portfolio for (MSc) in AI and Digital Media.
 
